@@ -80,7 +80,7 @@ const NaverMap: React.FC<NaverMapProps> = ({ robotAll }) => {
                                 <p>${robot_name}</p>
                                 <p><span>모드 : </span><span>${robot_mode}</span></p>
                                 <p><span>청소량 : </span><span class="${textChl}">${data.chl_ug_l}</span></p>
-                                <p><span>오수통량 : </span><span class="${textBg}">${data.bg_ppb}</span></p>
+                                <p><span>오수량 : </span><span class="${textBg}">${data.bg_ppb}</span></p>
                                 <p><span>필터량 : </span><span class="${textTurb}">${data.turb_ntu}</span></p>
                             </div>`
                         },

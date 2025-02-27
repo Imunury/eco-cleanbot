@@ -35,10 +35,21 @@ h1 {
 h2 {
   font-size: calc(1vw);
   @apply font-semibold;
+  color: white;
 }
 
 h3 {
   font-size: calc(0.9vw);
+  @apply font-medium;
+}
+
+h4 {
+  font-size: calc(0.6vw);
+  @apply font-medium;
+}
+
+h5 {
+  font-size: calc(0.5vw);
   @apply font-medium;
 }
 
@@ -48,6 +59,7 @@ p {
 
 a {
   font-size: calc(1vw);
+  @apply m-0
 }
 
 button {
@@ -67,7 +79,7 @@ button:hover {
 }
 
 .control>div>div {
-  @apply h-full bg-emerald-400 mx-3 rounded-lg opacity-90;
+  @apply h-full bg-gray-700 mx-3 rounded-lg opacity-90;
 }
 
 .control_container {
@@ -148,7 +160,7 @@ button:hover {
 }
 
 .sidebar {
-  @apply ml-7 flex mt-7 flex-col space-y-2;
+  @apply flex mt-16 flex-col space-y-2;
 }
 
 .sidebar h1 {
