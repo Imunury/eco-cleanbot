@@ -11,12 +11,16 @@ const RobotInfo: React.FC<RobotInfoProps> = ({ robotData }) => {
             <h1>Robot Status</h1>
             <div className='control_items'>
                 <div>
-                    <h2>경도</h2>
+                    <h2>청소량</h2>
                     <h3>{robotData.latitude.toFixed(6)}</h3>
                 </div>
                 <div>
-                    <h2>위도</h2>
+                    <h2>오수통량</h2>
                     <h3>{robotData.longitude.toFixed(6)}</h3>
+                </div>
+                <div>
+                    <h2>필터량</h2>
+                    <h3>{robotData.bearing}</h3>
                 </div>
                 <div>
                     <h2>속도</h2>
@@ -31,10 +35,7 @@ const RobotInfo: React.FC<RobotInfoProps> = ({ robotData }) => {
                     <h2>각속도</h2>
                     <h3>{robotData.current_angular_vel}</h3>
                 </div>
-                <div>
-                    <h2>방위</h2>
-                    <h3>{robotData.bearing}</h3>
-                </div>
+                
 
             </div>
         </div>

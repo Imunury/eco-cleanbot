@@ -11,6 +11,7 @@ import CCTV from '../components/CCTV'
 import SolarCharge from '../components/SolarCharge';
 import Pump from '../components/Pump';
 import ModeComponent from '../components/ModeComponent';
+import Vacuum from '../components/Vacuum';
 
 const Control: React.FC = () => {
 
@@ -49,7 +50,10 @@ const Control: React.FC = () => {
                 <div className='w-1/6 '>
                     <ONOFF robotData={robotData} />
                 </div>
-                <div className='w-5/6'>
+                <div className='w-1/6'>
+                    <Vacuum robotData={robotData} />
+                </div>
+                <div className='w-4/6'>
                     <RobotInfo robotData={robotData} />
                 </div>
             </div>

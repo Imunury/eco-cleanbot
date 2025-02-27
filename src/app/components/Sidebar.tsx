@@ -22,12 +22,12 @@ const Sidebar: React.FC = () => {
                 <Link href="/water_quality">
                     <h2 className=''>🟠 Water Quality</h2>
                 </Link>
-                <Link href="/han/ecobot00005">
+                {/* <Link href="/han/ecobot00005">
                     <h2 className=''>🟢 Weather</h2>
-                </Link>
-                <Link href="/waterlevel/ecobot00005">
+                </Link> */}
+                {/* <Link href="/waterlevel/ecobot00005">
                     <h2 className=''>🔵 WaterLevel</h2>
-                </Link>
+                </Link> */}
             </nav>
         </nav>
     );

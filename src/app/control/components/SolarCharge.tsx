@@ -8,13 +8,13 @@ interface RobotInfoProps {
 const SolarCharge: React.FC<RobotInfoProps> = ({ robotData }) => {
     return (
         <div className='control_container'>
-            <h1>Solar Charge</h1>
+            <h1>Battery Charge</h1>
             <div className="control_items">
                 <div>
-                    <h2>충전전압</h2>
-                    <h3>{robotData.ctr_bat_v}V</h3>
+                    <h2>충전량</h2>
+                    <h3>{robotData.ctr_bat_soc}%</h3>
                 </div>
-                <div>
+                {/* <div>
                     <h2>태양광 전압</h2>
                     <h3>{robotData.ctr_pv_v}V</h3>
                 </div>
@@ -29,7 +29,7 @@ const SolarCharge: React.FC<RobotInfoProps> = ({ robotData }) => {
                 <div>
                     <h2>장치 온도</h2>
                     <h3>{robotData.ctr_device_temp}°C</h3>
-                </div>
+                </div> */}
             </div>
         </div>
     )

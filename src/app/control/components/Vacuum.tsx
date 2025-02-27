@@ -59,7 +59,7 @@ const ONOFF: React.FC<RobotInfoProps> = ({ robotData }) => {
 
     return (
         <div className='control_container'>
-            <h1>Robot ON / OFF</h1>
+            <h1>Vacuum ON / OFF</h1>
             <div className="control_items">
                 <ToggleSwitch isOn={isOn} onChange={clickSwitch} />
             </div>
