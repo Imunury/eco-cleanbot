@@ -2,13 +2,16 @@
 
 import React, { useEffect, useState } from 'react';
 import type { RobotAll } from '..';
+import { useSearchParams } from 'next/navigation';
+
 
 interface NaverMapProps {
     robotAll: RobotAll[];
 }
 
 const NaverMap: React.FC<NaverMapProps> = ({ robotAll }) => {
-    // const [selectedRobot, setSelectedRobot] = useState<RobotAll | null>(null);
+    const searchParams = useSearchParams() ?? new URLSearchParams();
+    const selectedRobotId = searchParams.get('selectedRobot');
 
     useEffect(() => {
         const initializeMap = () => {
@@ -23,7 +26,10 @@ const NaverMap: React.FC<NaverMapProps> = ({ robotAll }) => {
 
                 robotAll.forEach(data => {
 
-                    let robot_mode = ""
+                    const robot_name = data.robot_id ? `eco-clean${data.robot_id.slice(6)}` : "error";
+
+
+                    let robot_mode = "";
                     const current_state = data.current_state
                     switch (current_state) {
                         case 0: robot_mode = "정지"
@@ -71,7 +77,7 @@ const NaverMap: React.FC<NaverMapProps> = ({ robotAll }) => {
                         map: map,
                         icon: {
                             content: `<div class="markerInfo">
-                                <p>${data.robot_id}</p>
+                                <p>${robot_name}</p>
                                 <p><span>모드 : </span><span>${robot_mode}</span></p>
                                 <p><span>청소량 : </span><span class="${textChl}">${data.chl_ug_l}</span></p>
                                 <p><span>오수통량 : </span><span class="${textBg}">${data.bg_ppb}</span></p>
@@ -95,11 +101,11 @@ const NaverMap: React.FC<NaverMapProps> = ({ robotAll }) => {
                                 map: map,
                                 icon: {
                                     content: `<div class="markerInfo">
-                                    <p>${data.robot_id}</p>
+                                    <p>${robot_name}</p>
                                     <p><span>모드 : </span><span>${robot_mode}</span></p>
                                     <p><span>청소량 : </span><span class="${textChl}">${data.chl_ug_l}</span></p>
-                                    <p><span>오수통량 : </span><span class="${textBg}">${data.bg_ppb}</span></p>
-                                <p><span>필터량 : </span><span class="${textTurb}">${data.turb_ntu}</span></p>
+                                    <p><span>오수량 : </span><span class="${textBg}">${data.bg_ppb}</span></p>
+                                    <p><span>필터량 : </span><span class="${textTurb}">${data.turb_ntu}</span></p>
                                 </div>`
                                 },
                             });
@@ -120,7 +126,6 @@ const NaverMap: React.FC<NaverMapProps> = ({ robotAll }) => {
                             anchor: new window.naver.maps.Point(12, 12) // 마커 중심 위치 조정
                         }
                     });
-
 
                     // marker.addListener('click', () => {
                     //     setSelectedRobot(data);
@@ -144,15 +149,17 @@ const NaverMap: React.FC<NaverMapProps> = ({ robotAll }) => {
     return (
         <div className="w-full h-full relative">
             <div id="map" className="w-full h-full"></div>
-            {/* {selectedRobot && (
-                <div className="absolute top-0 left-0 bg-white p-4 border z-10 text-red-500">
-                    <ul>
-                        <li>로봇 아이디: {selectedRobot.robot_id}</li>
-                        <li>Timestamp: {new Date(selectedRobot.timestamp).toLocaleString()}</li>
-                    </ul>
+            {selectedRobotId && (
+                <div className="w-1/3 h-1/4 top-0 right-0 bg-white p-0 z-100 absolute overflow-hidden">
+                    <iframe
+                        src={`https://ecobotdashboard1.co.kr/${selectedRobotId}/`}
+                        className="w-full h-full border-none"
+                        scrolling="no">
+                    </iframe>
                 </div>
-            )} */}
+            )}
         </div>
+
     );
 };
 

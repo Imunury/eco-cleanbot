@@ -20,7 +20,7 @@ const Sidebar: React.FC = () => {
                     <h2 className=''>🟣 CCTV</h2>
                 </Link>
                 <Link href="/water_quality">
-                    <h2 className=''>🟠 Water Quality</h2>
+                    <h2 className=''>🟠 Cleaning</h2>
                 </Link>
                 {/* <Link href="/han/ecobot00005">
                     <h2 className=''>🟢 Weather</h2>
