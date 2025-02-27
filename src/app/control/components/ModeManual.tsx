@@ -68,19 +68,19 @@ const ModeManual: React.FC<RobotInfoProps> = ({ robotData }) => {
                     <button onClick={() => clickControl("right_turn")}>우회전</button>
                 </div>
             </div>
-            <div>
+            {/* <div>
                 <h2>속도</h2>
                 <h3>{robotData.current_speeds[0]}</h3>
                 <h2>회전속도</h2>
                 <h3>{robotData.current_speeds[3]}</h3>
-            </div>
-            <div>
+            </div> */}
+            {/* <div>
                 <h2>속도제어</h2>
                 <button onClick={() => clickSpeed("0.15,-0.15,0.15,0.12")}>1단</button>
                 <button onClick={() => clickSpeed("0.3,-0.3,0.3,0.2")}>2단</button>
                 <button onClick={() => clickSpeed("0.5,-0.5,0.45,0.40")}>3단</button>
                 <button onClick={() => clickSpeed("0.65,-0.65,0.6,0.45")}>4단</button>
-            </div>
+            </div> */}
         </div>
     )
 }

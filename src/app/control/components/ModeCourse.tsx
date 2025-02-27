@@ -70,7 +70,7 @@ const ModeCourse: React.FC<RobotInfoProps> = ({ robotData }) => {
                     <h3>{robotData.course_goal_distance_threshold}m</h3>
                 </div>
             </div>
-            <div className="flex flex-col w-1/2">
+            {/* <div className="flex flex-col w-1/2">
                 <div>
                     <h2>코스 속도 제어</h2>
                     <button onClick={() => clickSpeed("0.25", "0.20")}>1단</button>
@@ -85,7 +85,7 @@ const ModeCourse: React.FC<RobotInfoProps> = ({ robotData }) => {
                     <button onClick={() => clickRotate("0.15", "0.12")}>3단</button>
                     <button onClick={() => clickRotate("0.20", "0.15")}>4단</button>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

@@ -35,7 +35,7 @@ const ModePosition: React.FC<RobotInfoProps> = ({ robotData }) => {
 
     return (
         <div className="flex justify-evenly h-full items-center ">
-            <div className="flex justify-evenly w-1/2">
+            {/* <div className="flex justify-evenly w-1/2">
                 <div>
                     <h2>속도</h2>
                     <h3>{holdingMinVelocity}</h3>
@@ -55,7 +55,7 @@ const ModePosition: React.FC<RobotInfoProps> = ({ robotData }) => {
                 <button onClick={() => clickPosition("5.0")}>5m</button>
                 <button onClick={() => clickPosition("8.0")}>8m</button>
                 <button onClick={() => clickPosition("10.0")}>10m</button>
-            </div>
+            </div> */}
         </div>
     )
 }

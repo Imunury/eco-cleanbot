@@ -6,6 +6,16 @@ interface RobotInfoProps {
 }
 
 const SolarCharge: React.FC<RobotInfoProps> = ({ robotData }) => {
+
+    const calculateTime = (ctr_bat_soc: number) => {
+        const hours = Math.floor(ctr_bat_soc / 10); // 10당 1시간
+        const minutes = (ctr_bat_soc % 10) * 6; // 1당 6분
+        return `${hours}시간 ${minutes}분`;
+    };
+    
+    // 사용 예제
+    const batteryTime = calculateTime(robotData.ctr_bat_soc ?? 0); // null이면 0으로 처리
+
     return (
         <div className='control_container'>
             <h1>Battery Charge</h1>
@@ -13,6 +23,10 @@ const SolarCharge: React.FC<RobotInfoProps> = ({ robotData }) => {
                 <div>
                     <h2>충전량</h2>
                     <h3>{robotData.ctr_bat_soc}%</h3>
+                </div>
+                <div>
+                    <h2>사용 가능 시간</h2>
+                    <h3>{batteryTime}</h3>
                 </div>
                 {/* <div>
                     <h2>태양광 전압</h2>

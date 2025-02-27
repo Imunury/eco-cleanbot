@@ -56,19 +56,23 @@ const PumpONOFF: React.FC<RobotInfoProps> = ({ robotData }) => {
     return (
         <div>
             <div>
-                <h3>PUMP1</h3>
-                <h3>PUMP2</h3>
+                <h3>꺼짐</h3>
+                {/* <h3>PUMP2</h3>
                 <h3>PUMP3</h3>
-                <h3>PUMP4</h3>
+                <h3>PUMP4</h3> */}
             </div>
-            <div>
-                {pumpStatus.map((isOn, index) => (
+            <div className=" w-full h-full justify-center items-center">
+                <div className="bg-green-800 w-4/5 h-full">
+
+                </div>
+                
+                {/* {pumpStatus.map((isOn, index) => (
                     <ToggleSwitch
                         key={index}
                         isOn={pumpStatus[index] === 1 ? true : false}
                         onChange={() => clickSwitch(index)}
                     />
-                ))}
+                ))} */}
             </div>
         </div>
     )

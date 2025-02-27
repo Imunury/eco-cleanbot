@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { ecobot_status_temp } from '@prisma/client';
 
@@ -12,6 +12,8 @@ import SolarCharge from '../components/SolarCharge';
 import Pump from '../components/Pump';
 import ModeComponent from '../components/ModeComponent';
 import Vacuum from '../components/Vacuum';
+import NaverMap from '@/app/components/NaverMap';
+import TrackingMap2 from '@/app/tracking_map/components/TrackingMap2';
 
 const Control: React.FC = () => {
 
@@ -72,8 +74,11 @@ const Control: React.FC = () => {
                 <div className='w-1/3'>
                     <CCTV robotData={robotData} />
                 </div>
-                <div className='w-2/3'>
+                <div className='w-1/3'>
                     <ModeComponent robotData={robotData} />
+                </div>
+                <div className='w-1/3'>
+                    {robotData && <TrackingMap2 robotData={robotData} />}
                 </div>
             </div>
 

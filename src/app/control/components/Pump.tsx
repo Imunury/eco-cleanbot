@@ -12,7 +12,7 @@ const Pump: React.FC<RobotInfoProps> = ({ robotData }) => {
 
     return (
         <div className='control_container'>
-            <h1>PUMP</h1>
+            <h1>화재 경보</h1>
             <div className='pump'>
                 <PumpONOFF robotData={robotData} />
                 {/* <PumpSchedule robotData={robotData} /> */}

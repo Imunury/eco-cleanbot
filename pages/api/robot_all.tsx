@@ -8,6 +8,7 @@ export interface RobotAll {
     timestamp: string;
     chl_ug_l: number;
     bg_ppb: number;
+    turb_ntu: number;
     latitude: number;
     longitude: number;
     current_state: number;
@@ -23,6 +24,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     es.timestamp as timestamp,
                     COALESCE(wq.chl_ug_l, '9999') AS chl_ug_l,  -- 기본값 0
                     COALESCE(wq.bg_ppb, '9999') AS bg_ppb,      -- 기본값 0
+                    COALESCE(wq.turb_ntu, '9999') AS turb_ntu,      -- 기본값 0
                     es.latitude,
                     es.longitude,
                     es.current_state
@@ -54,6 +56,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     es.timestamp as timestamp,
                     COALESCE(wq.chl_ug_l, '9999') AS chl_ug_l,  -- 기본값 0
                     COALESCE(wq.bg_ppb, '9999') AS bg_ppb,      -- 기본값 0
+                    COALESCE(wq.turb_ntu, '9999') AS turb_ntu,      -- 기본값 0
                     es.latitude,
                     es.longitude,
                     es.current_state
@@ -85,6 +88,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     es.timestamp as timestamp,
                     COALESCE(wq.chl_ug_l, '9999') AS chl_ug_l,  -- 기본값 0
                     COALESCE(wq.bg_ppb, '9999') AS bg_ppb,      -- 기본값 0
+                    COALESCE(wq.turb_ntu, '9999') AS turb_ntu,      -- 기본값 0
                     es.latitude,
                     es.longitude,
                     es.current_state
@@ -115,6 +119,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         } catch (error) {
             console.error('Error fetching data:', error);
             res.status(500).json({ error: 'Failed to fetch ecobot status' });
+        } finally {
+            await prisma.$disconnect(); // 연결 해제
         }
     } else {
         res.status(405).json({ message: 'Method not allowed' });

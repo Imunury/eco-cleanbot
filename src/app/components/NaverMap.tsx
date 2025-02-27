@@ -50,6 +50,13 @@ const NaverMap: React.FC<NaverMapProps> = ({ robotAll }) => {
                         textBg = 'textOrange'
                     }
 
+                    let textTurb = 'textBlue'
+                    if (data.bg_ppb > 60) {
+                        textTurb = 'textRed'
+                    } else if (data.bg_ppb > 30) {
+                        textTurb = 'textOrange'
+                    }
+
                     let latitude = data.latitude
                     let longitude = data.longitude
                     let timestamp = data.timestamp
@@ -65,10 +72,10 @@ const NaverMap: React.FC<NaverMapProps> = ({ robotAll }) => {
                         icon: {
                             content: `<div class="markerInfo">
                                 <p>${data.robot_id}</p>
-                                <p><span>클로로필 : </span><span class="${textChl}">${data.chl_ug_l}</span></p>
-                                <p><span>남조류 : </span><span class="${textBg}">${data.bg_ppb}</span></p>
                                 <p><span>모드 : </span><span>${robot_mode}</span></p>
-                                <p><span></span><span>${formattedTimestamp}</span></p>
+                                <p><span>청소량 : </span><span class="${textChl}">${data.chl_ug_l}</span></p>
+                                <p><span>오수통량 : </span><span class="${textBg}">${data.bg_ppb}</span></p>
+                                <p><span>필터량 : </span><span class="${textTurb}">${data.turb_ntu}</span></p>
                             </div>`
                         },
                     });
@@ -89,10 +96,10 @@ const NaverMap: React.FC<NaverMapProps> = ({ robotAll }) => {
                                 icon: {
                                     content: `<div class="markerInfo">
                                     <p>${data.robot_id}</p>
-                                    <p><span>클로로필 : </span><span class="${textChl}">${data.chl_ug_l}</span></p>
-                                    <p><span>남조류 : </span><span class="${textBg}">${data.bg_ppb}</span></p>
                                     <p><span>모드 : </span><span>${robot_mode}</span></p>
-                                    <p><span></span><span>${formattedTimestamp}</span></p>
+                                    <p><span>청소량 : </span><span class="${textChl}">${data.chl_ug_l}</span></p>
+                                    <p><span>오수통량 : </span><span class="${textBg}">${data.bg_ppb}</span></p>
+                                <p><span>필터량 : </span><span class="${textTurb}">${data.turb_ntu}</span></p>
                                 </div>`
                                 },
                             });

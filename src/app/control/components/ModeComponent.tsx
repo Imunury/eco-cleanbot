@@ -31,7 +31,7 @@ const ModeComponent: React.FC<RobotInfoProps> = ({ robotData }) => {
             case 0: setMode("정지"), setBg("bg-red-400"); break;
             case 1: setMode("수동"), setBg("bg-purple-300"); break;
             case 2: setMode("코스주행"), setBg("bg-orange-400"); break;
-            case 3: setMode("위치사수"), setBg("bg-cyan-400"); break;
+            case 3: setMode("자동"), setBg("bg-cyan-400"); break;
         }
     }, []);
 
@@ -41,7 +41,7 @@ const ModeComponent: React.FC<RobotInfoProps> = ({ robotData }) => {
             case 0: setMode("정지"), setBg("bg-red-400"); break;
             case 1: setMode("수동"), setBg("bg-purple-300"); break;
             case 2: setMode("코스주행"), setBg("bg-orange-400"); break;
-            case 3: setMode("위치사수"), setBg("bg-cyan-400"); break;
+            case 3: setMode("자동"), setBg("bg-cyan-400"); break;
             default: setMode("");
         }
 
@@ -76,9 +76,9 @@ const ModeComponent: React.FC<RobotInfoProps> = ({ robotData }) => {
             <div className="h-1/6">
                 <button className="bg-red-400" onClick={() => changeMode("00")}>정지</button>
                 <button className="bg-purple-300" onClick={() => changeMode("01")}>수동</button>
-                <button className="bg-orange-400" onClick={() => changeMode("02")}>코스주행</button>
-                <button className="bg-cyan-400" onClick={() => changeMode("03")}>위치사수</button>
-                <span className="font-medium">실제 모드 : {changedMode}</span>
+                {/* <button className="bg-orange-400" onClick={() => changeMode("02")}>코스주행</button> */}
+                <button className="bg-cyan-400" onClick={() => changeMode("03")}>자동</button>
+                {/* <span className="font-medium">실제 모드 : {changedMode}</span> */}
             </div>
             <div className={`text-center ${bg} h-5/6 transition-colors duration-400 ease-in-out rounded-lg`}>
                 <h1>Panel Mode : {mode}</h1>
@@ -88,10 +88,10 @@ const ModeComponent: React.FC<RobotInfoProps> = ({ robotData }) => {
                 {mode === "수동" && (
                     <ModeManual robotData={robotData} />
                 )}
-                {mode === "코스주행" && (
+                {/* {mode === "코스주행" && (
                     <ModeCourse robotData={robotData} />
-                )}
-                {mode === "위치사수" && (
+                )} */}
+                {mode === "자동" && (
                     <ModePosition robotData={robotData} />
                 )}
             </div>
