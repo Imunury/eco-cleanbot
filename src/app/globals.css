@@ -90,8 +90,12 @@ button:hover {
   @apply flex justify-evenly items-center h-2/3;
 }
 
+.control h1 {
+  @apply text-white
+}
+
 .control_items h3 {
-  @apply text-slate-800
+  @apply text-slate-300
 }
 
 .pump {

@@ -56,13 +56,13 @@ const PumpONOFF: React.FC<RobotInfoProps> = ({ robotData }) => {
     return (
         <div>
             <div>
-                <h3>꺼짐</h3>
+                <h2>양호</h2>
                 {/* <h3>PUMP2</h3>
                 <h3>PUMP3</h3>
                 <h3>PUMP4</h3> */}
             </div>
             <div className=" w-full h-full justify-center items-center">
-                <div className="bg-green-800 w-4/5 h-full">
+                <div className="bg-green-800 w-1/5 h-3/4">
 
                 </div>
                 
