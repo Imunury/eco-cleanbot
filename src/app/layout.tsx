@@ -23,7 +23,7 @@ export default function RootLayout({
           <HeaderBar />
           <div className='w-full h-full flex'>
             <RobotList/>
-            <main className='w-5/6 h-full overflow-x-hidden bg-gray-900 scrollbar-thin scrollbar-thumb-green-400 scrollbar-track-green-200'>
+            <main className='w-5/6 h-full overflow-x-hidden bg-gray-900 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-500'>
               {children}
             </main>
           </div>

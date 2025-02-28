@@ -55,7 +55,7 @@ const RobotList: React.FC = () => {
     };
 
     return (
-        <section className='w-1/6 overflow-y-scroll bg-gray-900 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-500'>
+        <section className='w-1/6 h-full overflow-y-scroll bg-gray-900 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-500'>
             {robotList.length > 0 ? (
                 <ul>
                     {robotList.map((data, index) => {

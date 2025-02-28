@@ -78,7 +78,7 @@ const ModeComponent: React.FC<RobotInfoProps> = ({ robotData }) => {
                 <button className="bg-purple-300" onClick={() => changeMode("01")}>수동</button>
                 {/* <button className="bg-orange-400" onClick={() => changeMode("02")}>코스주행</button> */}
                 <button className="bg-cyan-400" onClick={() => changeMode("03")}>자동</button>
-                {/* <span className="font-medium">실제 모드 : {changedMode}</span> */}
+                <span className="font-medium">실제 모드 : {changedMode}</span>
             </div>
             <div className={`text-center ${bg} h-5/6 transition-colors duration-400 ease-in-out rounded-lg`}>
                 <h1>Panel Mode : {mode}</h1>
